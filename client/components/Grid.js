@@ -15,7 +15,6 @@ class Grid extends Component {
   render() {
     return (
       <div>
-        <h5>Hello Grid</h5>
         <SearchTable />
       </div>
     )

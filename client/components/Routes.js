@@ -13,7 +13,6 @@ class Routes extends Component {
   render () {
     return (
       <div>
-      <h5>Hello Routes</h5>
         <Switch>
           <Route path="/grid" component={Grid} />
           <Route path="/graph" component={Graph} />
