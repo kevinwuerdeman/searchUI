@@ -1,1 +1,28 @@
 @import '~antd/dist/antd.min.css';
+
+
+.btn {
+    margin-right: .5em;
+}
+
+.gridPage-container {
+    display: flex;
+    
+}
+
+.input-group {
+    margin-right: 10px;
+}
+
+.search-btns {
+    margin-top: .25em;
+    display: flex;
+    
+}
+
+.sidebar {
+    background-color: lightslategray;
+    width: 25vw; 
+
+}
+

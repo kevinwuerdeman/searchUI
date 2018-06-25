@@ -84,7 +84,7 @@ class SearchTable extends Component {
                 </div>
               </div>
               <div className="row"> {/*TABLE GOES HERE */}
-              <Table dataSource={this.props.comments} columns={columns} pagination={{pageSize: 18}}/>
+                <Table dataSource={this.props.comments} columns={columns} pagination={{pageSize: 18}}/>
               </div>
             </div>
           </div>

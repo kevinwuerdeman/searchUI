@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { default as SearchTable } from './SearchTable';
+import { default as SideNav } from './SideNav';
 import { getCommentsThunk } from '../reducers/comments';
 
 class Grid extends Component {
@@ -14,7 +15,10 @@ class Grid extends Component {
 
   render() {
     return (
-      <div>
+      <div className="gridPage-container">
+        <div className="sidebar">
+          <SideNav />
+        </div>
         <SearchTable />
       </div>
     )
