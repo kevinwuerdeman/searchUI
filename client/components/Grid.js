@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { default as SearchTable } from './SearchTable';
 
 class Grid extends Component {
   constructor() {
@@ -10,6 +11,7 @@ class Grid extends Component {
     return (
       <div>
         <h1>Hello Grid</h1>
+        <SearchTable />
       </div>
     )
   }
