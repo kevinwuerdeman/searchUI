@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import { filterCommentsThunk } from '../reducers/comments';
+import { filterCommentsThunk, getCommentsThunk } from '../reducers/comments';
 
 
 class SideNav extends Component {
@@ -17,7 +17,6 @@ class SideNav extends Component {
 
   setSearchParam = (e) => {
     this.setState({searchParam: e.target.value})
-    console.log(e.target.value)
   }
 
   handleSearchChange = (e) => {
@@ -25,11 +24,18 @@ class SideNav extends Component {
   }
 
   handleSearchSubmit = () => {
-    const re = new RegExp(_.escapeRegExp(this.state.searchCriteria), 'i');
-    const isMatch = result => re.test(result[this.state.searchParam]);
-    const filteredComments = _.filter(this.props.comments, isMatch);
-    this.props.filterComments(filteredComments)
-    console.log(isMatch(this.props.comments[0]), this.props.comments[0][this.state.searchParam], this.state.results)
+    this.props.fetchAllComments()
+    setTimeout(() => {
+      const re = new RegExp(_.escapeRegExp(this.state.searchCriteria), 'i');
+      const isMatch = result => re.test(result[this.state.searchParam]);
+      const filteredComments = _.filter(this.props.comments, isMatch);
+      this.props.filterComments(filteredComments)
+    }, 500);
+  }
+
+  handleClearSubmit = (e) => {
+    this.setState({searchCriteria: ""});
+    this.props.fetchAllComments();
   }
 
   render() {
@@ -47,11 +53,11 @@ class SideNav extends Component {
             </select>
           </div>
           <div className="search-input">
-            <input className="form-control" type="text" placeholder="Enter search Input..." onChange={this.handleSearchChange}></input>
+            <input className="form-control" type="text" placeholder="Enter search Input..." onChange={this.handleSearchChange} value={this.state.searchCriteria}></input>
           </div>
           <div className="search-btns">
             <button className="btn btn-primary" type="submit" onClick={this.handleSearchSubmit}>Search</button>
-            <button className="btn btn-primary" type="submit">Clear</button>
+            <button className="btn btn-primary" type="submit" onClick={this.handleClearSubmit}>Clear</button>
           </div>
         </div>
       )
@@ -67,6 +73,9 @@ const mapDispatch = (dispatch) => {
   return {
     filterComments(arr) {
       dispatch(filterCommentsThunk(arr));
+    },
+    fetchAllComments() {
+       dispatch(getCommentsThunk());
     }
   }
 };
