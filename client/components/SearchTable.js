@@ -16,7 +16,7 @@ class SearchTable extends Component {
 
     const columns = [{
       title: 'ECID',
-      dataIndex: 'name',
+      dataIndex: 'postId',
       key: 'postId',
       width: 50,
     }, {
@@ -67,18 +67,16 @@ class SearchTable extends Component {
         <h3>Hello Table</h3>
         <div className="card-body">
           <div className="row">
-            <div className="dataTables_length" id="dataTables_length">
-              <label>
-                Show
-                <select name="dataTable_length" className="form-control form-control-sm" aria-controls="dataTable">
-                  <option value="10">10</option>
-                  <option value="25">25</option>
-                  <option value="50">50</option>
-                  <option value="100">100</option>
-                </select>
-                entries
+            <label>
+              Show
+              <select name="dataTable_length" className="form-control form-control-sm" aria-controls="dataTable">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+              entries
               </label>
-            </div>
           </div>
           <div className="">
             <div className="dataTables_filter" id="dataTable_filter">
