@@ -22,7 +22,7 @@ class SideNav extends Component {
               <option>Ultimate Parent ID</option>
             </select>
           </div>
-          <div className="input-group">
+          <div className="search-input">
             <input className="form-control" type="text" placeholder="Enter search Input..."></input>
           </div>
           <div className="search-btns">

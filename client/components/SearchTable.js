@@ -9,88 +9,91 @@ class SearchTable extends Component {
   }
 
   componentDidMount() {
-   
+
   }
 
   render() {
-    
+
     const columns = [{
       title: 'ECID',
       dataIndex: 'name',
       key: 'postId',
+      width: 50,
     }, {
       title: 'Account Number',
       dataIndex: 'name',
       key: 'id',
+      width: 50,
     }, {
       title: 'Source',
       dataIndex: 'name',
       key: 'name',
+      width: 50,
     }, {
       title: 'Product',
       dataIndex: 'name',
       key: 'email',
+      width: 50,
     }, {
       title: 'Channel',
       dataIndex: 'name',
       key: 'body',
+      width: 50,
     }, {
       title: 'Amount',
       dataIndex: 'name',
       key: 'name',
+      width: 50,
     }, {
       title: 'Status',
       dataIndex: 'name',
       key: 'name',
+      width: 50,
     }, {
       title: 'Error Code',
       dataIndex: 'name',
       key: 'name',
+      width: 50,
     }, {
       title: 'Details',
       key: 'action',
+      width: 50,
       render: () => (
-        <span><a href='#'> See Details</a></span>
+        <span><a href="#">See Details</a></span>
       ),
-    }]
+    }];
     return (
       <div className="container-fluid">
         <h3>Hello Table</h3>
         <div className="card-body">
-          <div className="table-responsive">
-            <div className="dataTables_wrapper container-fluid dt-bootstrap4 no-footer" id="dataTable_wrapper">
-              <div className="row">
-                <div className="col-sm-12 col-md-6">
-                  <div className="dataTables_length" id="dataTables_length">
-                    <label>
-                      Show
-                      <select name="dataTable_length" className="form-control form-control-sm" aria-controls="dataTable">
-                        <option value="10">10</option>
-                        <option value="25">25</option>
-                        <option value="50">50</option>
-                        <option value="100">100</option>
-                      </select>
-                      entries
-                    </label>
-                  </div>
-                </div>
-                <div className="col-sm-12 col-md-6">
-                  <div className="dataTables_filter" id="dataTable_filter">
-                  <label>
-                    Search:
-                    <input className="form-control form-control-sm" aria-controls="dataTable" type="search" placeholder=""></input>
-                  </label>
-                  </div>
-                </div>
-              </div>
-              <div className="row"> {/*TABLE GOES HERE */}
-                <Table dataSource={this.props.comments} columns={columns} pagination={{pageSize: 18}}/>
-              </div>
+          <div className="row">
+            <div className="dataTables_length" id="dataTables_length">
+              <label>
+                Show
+                <select name="dataTable_length" className="form-control form-control-sm" aria-controls="dataTable">
+                  <option value="10">10</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                </select>
+                entries
+              </label>
+            </div>
+          </div>
+          <div className="">
+            <div className="dataTables_filter" id="dataTable_filter">
+            <label>
+              Search:
+              <input className="form-control form-control-sm" aria-controls="dataTable" type="search" placeholder="" />
+            </label>
             </div>
           </div>
         </div>
+        <div className="components-table-demo-nested"> {/*TABLE GOES HERE */}
+          <Table dataSource={this.props.comments} columns={columns} pagination={{pageSize: 18}} />
+        </div>
       </div>
-    )
+    );
   }
 }
 
