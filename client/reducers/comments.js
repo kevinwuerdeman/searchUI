@@ -4,7 +4,7 @@ import  history  from '../history';
  * ACTION TYPES
  */
 const GET_COMMENTS = 'GET_COMMENTS';
-const FILTER_COMMENTS = 'FILTER_COMMENTS;'
+const FILTER_COMMENTS = 'FILTER_COMMENTS'
 
 /**
  * ACTION CREATORS

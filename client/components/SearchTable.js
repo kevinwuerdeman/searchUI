@@ -76,7 +76,7 @@ class SearchTable extends Component {
                 <option value="100">100</option>
               </select>
               entries
-              </label>
+            </label>
           </div>
           <div className="">
             <div className="dataTables_filter" id="dataTable_filter">
